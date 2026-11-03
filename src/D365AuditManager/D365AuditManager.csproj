@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>D365Tools.AuditManager</RootNamespace>
+    <AssemblyName>D365Tools.AuditManager</AssemblyName>
+    <Product>D365 Audit Manager</Product>
+    <Description>XrmToolBox tool: compare and change auditing of tables and columns across several environments.</Description>
+    <!-- NuGet package for the XrmToolBox Tool Library: dotnet pack (see pack.ps1) -->
+    <NuspecFile>D365AuditManager.nuspec</NuspecFile>
+    <NuspecProperties>version=$(Version);authors=$(Authors);repositoryUrl=$(RepositoryUrl);configuration=$(Configuration)</NuspecProperties>
+    <NoWarn>$(NoWarn);NU5048;NU5100;NU5128</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Compile only against XrmToolBox/SDK – XrmToolBox ships these DLLs at runtime. -->
+    <PackageReference Include="XrmToolBoxPackage" Version="1.2025.10.74" ExcludeAssets="runtime" PrivateAssets="all" />
+    <PackageReference Include="MscrmTools.Xrm.Connection" Version="1.2025.9.64" ExcludeAssets="runtime" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.ComponentModel.Composition" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Shared\**\*.cs" LinkBase="Shared" />
+  </ItemGroup>
+
+</Project>

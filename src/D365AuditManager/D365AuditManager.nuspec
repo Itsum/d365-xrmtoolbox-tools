@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tokens ($version$, $authors$, $repositoryUrl$) come from Directory.Build.props via NuspecProperties. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>D365Tools.AuditManager</id>
+    <version>$version$</version>
+    <title>D365 Audit Manager</title>
+    <authors>$authors$</authors>
+    <owners>$authors$</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>$repositoryUrl$</projectUrl>
+    <iconUrl>$repositoryUrl$/raw/main/docs/icons/audit-manager.png</iconUrl>
+    <summary>Compare and change auditing of tables and columns across DEV/TEST/PROD side by side.</summary>
+    <description>Shows organization, table and column auditing for several Dataverse / Dynamics 365 environments side by side, highlights differences, lets you tick/untick or copy settings from one environment to others, and saves in the background (environments in parallel) while publishing only what changed. Display names in the base language plus any installed language. Light and dark theme.</description>
+    <releaseNotes>First release.</releaseNotes>
+    <tags>XrmToolBox Dataverse Dynamics365 CRM Audit Auditing Compare Environments</tags>
+    <dependencies>
+      <dependency id="XrmToolBox" version="1.2025.10.74" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\net48\D365Tools.AuditManager.dll" target="lib\net48\Plugins\D365Tools.AuditManager.dll" />
+  </files>
+</package>

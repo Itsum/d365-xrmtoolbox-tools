@@ -1,0 +1,25 @@
+<Project>
+
+  <!-- ===================================================================
+       Edit these before publishing to the XrmToolBox Tool Library.
+       They end up in both DLLs (GitHub/Help links in XrmToolBox) and in the NuGet packages.
+       =================================================================== -->
+  <PropertyGroup>
+    <RepositoryUrl>https://github.com/Itsum/d365-xrmtoolbox-tools</RepositoryUrl>
+    <Authors>Mustafa Ulus</Authors>
+    <!-- Package version = DLL version (Tool Library requirement). Use 4 parts and do not end with .0 -->
+    <Version>1.2026.11.1</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Company>$(Authors)</Company>
+    <Copyright>Copyright © $(Authors) 2026</Copyright>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <FileVersion>$(Version)</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AssemblyMetadata Include="RepositoryUrl" Value="$(RepositoryUrl)" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Developer helper (not shipped):
+      - renders both tools with sample data in light and dark theme as PNG (docs screenshots)
+      - smoke test of the Tool Library checklist items that need no Dataverse:
+        opens without connection, every toolbar control usable without error,
+        connection-requiring controls ask for a connection, resizing, theme switching.
+    Run:  dotnet build -c Release tools\UiPreview, then tools\UiPreview\bin\Release\net48\UiPreview.exe "output folder"
+  -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>D365Tools.UiPreview</RootNamespace>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="XrmToolBoxPackage" Version="1.2025.10.74" />
+    <PackageReference Include="MscrmTools.Xrm.Connection" Version="1.2025.9.64" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.ComponentModel.Composition" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\src\Shared\**\*.cs" LinkBase="Shared" />
+    <Compile Include="..\..\src\D365AuditManager\**\*.cs" Exclude="..\..\src\D365AuditManager\obj\**;..\..\src\D365AuditManager\bin\**" LinkBase="Audit" />
+    <Compile Include="..\..\src\D365TranslationManager\**\*.cs" Exclude="..\..\src\D365TranslationManager\obj\**;..\..\src\D365TranslationManager\bin\**" LinkBase="Translation" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tokens ($version$, $authors$, $repositoryUrl$) come from Directory.Build.props via NuspecProperties. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>D365Tools.TranslationManager</id>
+    <version>$version$</version>
+    <title>D365 Translation Manager</title>
+    <authors>$authors$</authors>
+    <owners>$authors$</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>$repositoryUrl$</projectUrl>
+    <iconUrl>$repositoryUrl$/raw/main/docs/icons/translation-manager.png</iconUrl>
+    <summary>Edit display names, descriptions, choice labels and form labels in all installed languages – fast, in the background.</summary>
+    <description>Lists the labels of tables, columns, choices (local and global, status, yes/no) and forms (tabs, sections, fields) in the base language and any other installed language, lets you edit them inline and explains for each cell what you change, where it is stored and where it shows up (e.g. global choice used elsewhere, form label overriding the column name). Changes are batched and saved in the background, then only the affected components are published. Light and dark theme.</description>
+    <releaseNotes>First release.</releaseNotes>
+    <tags>XrmToolBox Dataverse Dynamics365 CRM Translation Translations Labels Localization Language</tags>
+    <dependencies>
+      <dependency id="XrmToolBox" version="1.2025.10.74" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\net48\D365Tools.TranslationManager.dll" target="lib\net48\Plugins\D365Tools.TranslationManager.dll" />
+  </files>
+</package>
