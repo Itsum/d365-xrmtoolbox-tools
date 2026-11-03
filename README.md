@@ -94,15 +94,31 @@ pack.ps1                     NuGet packages for the Tool Library + checklist val
 
 Both DLLs are self-contained (no extra assemblies in the Plugins folder).
 
-## Publish to the XrmToolBox Tool Library
+## Roadmap
 
-1. Edit `Directory.Build.props`: `RepositoryUrl`, `Authors`, `Version` (4 parts, must not end with `.0`; raise it for every release).
-2. Push the repository to GitHub (the icon URLs point to `docs/icons/*.png` on the `main` branch).
-3. `powershell -ExecutionPolicy Bypass -File pack.ps1 -CheckUrls` → all checks must pass.
-4. `dotnet nuget push artifacts\*.nupkg --api-key <your nuget.org key> --source https://api.nuget.org/v3/index.json`
-5. After nuget.org has indexed the packages, submit both package ids on the XrmToolBox portal and wait for validation.
+The goal is generic tools that anyone can adapt to their own way of working: every tool gets the same multi-environment view (DEV / TEST / PROD side by side), and configurations can be saved and shared.
 
-Each package also embeds its icon (`docs/icons`), a short readme (`docs/nuget`) and the MIT license expression, so nuget.org shows no best-practice warnings.
+### D365 Audit Manager
+
+- [ ] **Baseline export/import** – save the audit configuration as JSON/CSV, keep it in source control, compare any environment against it and apply it.
+- [ ] **Solution-aware (ALM)** – filter by solution and add changes to an unmanaged solution instead of changing TEST/PROD directly.
+- [ ] **Organization settings & audit log** – user access auditing, retention period, audit log size per table, audit history of a record.
+- [ ] **Bulk rules** – e.g. “all custom columns on”, “everything except system columns”, name patterns – across tables and environments.
+
+### D365 Translation Manager
+
+- [ ] **Export/import for translators or AI** – export all labels as Excel, CSV or JSON, translate them with any AI or translator, import the result, then review the changes table → column → form one by one or apply all at once, and save and publish.
+- [ ] **More components** – view names, sitemap, dashboards, business process flow stages, app names, business rule messages, web resources (RESX).
+- [ ] **Search & replace + checks** – rename a term everywhere with preview, glossary, consistency and typo checks, compare labels between environments.
+
+### New tools (all with the multi-environment view)
+
+- [ ] **Environment Variables** – values of all environment variables in DEV/TEST/PROD side by side, highlight differences, set values.
+- [ ] **Metadata Compare** – drift between environments: columns, choice values, forms, views, plugin steps.
+- [ ] **Security Role Compare** – privileges of security roles and column security profiles across environments, and align them.
+- [ ] **Plugin & API Overview** – plugin steps, custom APIs, webhooks and flows per environment, incl. enabled/disabled.
+
+Ideas and votes are welcome as [GitHub issues](https://github.com/Itsum/d365-xrmtoolbox-tools/issues).
 
 ## License
 
