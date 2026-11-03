@@ -102,4 +102,8 @@ Both DLLs are self-contained (no extra assemblies in the Plugins folder).
 4. `dotnet nuget push artifacts\*.nupkg --api-key <your nuget.org key> --source https://api.nuget.org/v3/index.json`
 5. After nuget.org has indexed the packages, submit both package ids on the XrmToolBox portal and wait for validation.
 
-Consider adding a `LICENSE` file (e.g. MIT) before publishing an open-source tool.
+Each package also embeds its icon (`docs/icons`), a short readme (`docs/nuget`) and the MIT license expression, so nuget.org shows no best-practice warnings.
+
+## License
+
+[MIT](LICENSE)

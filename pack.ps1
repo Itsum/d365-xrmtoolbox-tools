@@ -61,6 +61,13 @@ foreach ($pkg in Get-ChildItem $Output -Filter *.nupkg) {
         Check $pkg.Name (-not (IsPlaceholder $m.authors)) "Authors: $($m.authors)"
         Check $pkg.Name (-not [string]::IsNullOrWhiteSpace($m.description) -and -not [string]::IsNullOrWhiteSpace($m.releaseNotes)) "Description + release notes"
 
+        # nuget.org best practices (warnings on upload otherwise)
+        $names = @($zip.Entries | ForEach-Object FullName)
+        Check $pkg.Name (-not [string]::IsNullOrWhiteSpace($m.license.InnerText)) "License: $($m.license.InnerText)"
+        Check $pkg.Name ($m.icon -and $names -contains $m.icon) "Embedded icon: $($m.icon)"
+        Check $pkg.Name ($m.readme -and $names -contains $m.readme) "Embedded readme: $($m.readme)"
+        Check $pkg.Name (-not [string]::IsNullOrWhiteSpace($m.repository.url)) "Repository: $($m.repository.url)"
+
         if ($CheckUrls) {
             foreach ($url in @($m.iconUrl, $m.projectUrl)) {
                 try {

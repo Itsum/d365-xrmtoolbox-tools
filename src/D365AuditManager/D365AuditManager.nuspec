@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Tokens ($version$, $authors$, $repositoryUrl$) come from Directory.Build.props via NuspecProperties. -->
+<!-- Tokens ($version$, $authors$, $repositoryUrl$, $copyright$) come from Directory.Build.props via NuspecProperties. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>D365Tools.AuditManager</id>
@@ -7,9 +7,15 @@
     <title>D365 Audit Manager</title>
     <authors>$authors$</authors>
     <owners>$authors$</owners>
+    <copyright>$copyright$</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
     <projectUrl>$repositoryUrl$</projectUrl>
+    <repository type="git" url="$repositoryUrl$.git" branch="main" />
+    <!-- icon = shown on nuget.org; iconUrl = still required by the XrmToolBox Tool Library -->
+    <icon>icon.png</icon>
     <iconUrl>$repositoryUrl$/raw/main/docs/icons/audit-manager.png</iconUrl>
+    <readme>README.md</readme>
     <summary>Compare and change auditing of tables and columns across DEV/TEST/PROD side by side.</summary>
     <description>Shows organization, table and column auditing for several Dataverse / Dynamics 365 environments side by side, highlights differences, lets you tick/untick or copy settings from one environment to others, and saves in the background (environments in parallel) while publishing only what changed. Display names in the base language plus any installed language. Light and dark theme.</description>
     <releaseNotes>First release.</releaseNotes>
@@ -20,5 +26,7 @@
   </metadata>
   <files>
     <file src="bin\$configuration$\net48\D365Tools.AuditManager.dll" target="lib\net48\Plugins\D365Tools.AuditManager.dll" />
+    <file src="..\..\docs\icons\audit-manager.png" target="icon.png" />
+    <file src="..\..\docs\nuget\README-AuditManager.md" target="README.md" />
   </files>
 </package>

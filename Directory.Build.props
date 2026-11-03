@@ -8,7 +8,7 @@
     <RepositoryUrl>https://github.com/Itsum/d365-xrmtoolbox-tools</RepositoryUrl>
     <Authors>Mustafa Ulus</Authors>
     <!-- Package version = DLL version (Tool Library requirement). Use 4 parts and do not end with .0 -->
-    <Version>1.2026.11.1</Version>
+    <Version>1.2026.11.2</Version>
   </PropertyGroup>
 
   <PropertyGroup>

@@ -10,8 +10,8 @@
     <Description>XrmToolBox tool: view and edit labels of tables, columns, choices and forms in all installed languages.</Description>
     <!-- NuGet package for the XrmToolBox Tool Library: dotnet pack (see pack.ps1) -->
     <NuspecFile>D365TranslationManager.nuspec</NuspecFile>
-    <NuspecProperties>version=$(Version);authors=$(Authors);repositoryUrl=$(RepositoryUrl);configuration=$(Configuration)</NuspecProperties>
-    <NoWarn>$(NoWarn);NU5048;NU5100;NU5128</NoWarn>
+    <NuspecProperties>version=$(Version);authors=$(Authors);copyright=$(Copyright);repositoryUrl=$(RepositoryUrl);configuration=$(Configuration)</NuspecProperties>
+    <NoWarn>$(NoWarn);NU5100;NU5128</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
